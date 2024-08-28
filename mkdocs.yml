@@ -1,0 +1,62 @@
+site_name: IBM watsonx Generative AI Assistant Walkthrough
+repo_url: https://github.ibm.com/CE-National/RAG-documentation
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.prune
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.share
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/watson-white-logo.jpeg
+  favicon: assets/watson-white-logo.jpeg
+  font:
+    text: IBM Plex Sans
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date
+
+extra_css:
+  - stylesheets/index.css
+
+markdown_extensions:
+  - attr_list
+  - footnotes
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+nav:
+  - Home:
+      - index.md
+      - generative-ai/generative-ai.md
+      - generative-ai/watsonx.md
+  - watsonx Assistant:
+      - watsonx-assistant/index.md
+  - Watson Discovery:
+      - watson-discovery/WatsonDiscovery.md
+  - Assistant Integrations:
+      - integrations/integrations.md
+  - watsonx.ai:
+      - watsonx.ai/watsonx.md
