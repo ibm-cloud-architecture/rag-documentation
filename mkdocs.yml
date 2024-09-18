@@ -54,6 +54,7 @@ nav:
       - generative-ai/watsonx.md
   - watsonx Assistant:
       - watsonx-assistant/index.md
+      - watsonx-assistant/video-url.md
   - Watson Discovery:
       - watson-discovery/WatsonDiscovery.md
   - Assistant Integrations:

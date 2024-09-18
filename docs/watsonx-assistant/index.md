@@ -38,6 +38,15 @@ Integrations connect the chatbot with external systems and platforms, expanding 
 
 Analytics monitor and analyze how users interact with the chatbot, providing insights into usage patterns, effectiveness of responses, and areas for improvement. This feedback is essential for optimizing the chatbot's performance and user satisfaction.
 
+## Resources
+
+- [IBM watsonx Assistant](https://www.ibm.com/products/watsonx-assistant?utm_content=SRCWW&p1=Search&p4=43700077724070556&p5=e&p9=58700008185854205&gclid=Cj0KCQjw9Km3BhDjARIsAGUb4nwJj7LtEgqgy4_uwSktoWQlqCcHyoF9btQM6zeVZeJ9zY2bhvuNscwaAhICEALw_wcB&gclsrc=aw.ds)
+
+- [IBM watsonx Assistant Documentation](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-welcome-new-assistant)
+
+- Intermediate Skill: [Video URL in RAG Scenario](./video-url)
+
+
 ## Assistant Walkthrough
 
 This is a walk-through tutorial on creating custom actions, utilizing session variables and previewing the assistant.
