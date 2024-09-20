@@ -102,6 +102,8 @@ You can use the [Swagger Editor](https://editor.swagger.io/){ target=\_blank} to
 
 You can use the following block of sample OpenAPI document in your Swagger Editor. I have provided it in a .json format since watsonx Assistant requires an OpenAPI document in .json format to build a custom integration.
 
+Make sure to update the url (line 10) and the path (line 15) to match the endpoint you noted from the previous step.
+
 ```json linenums="1"
 {
   "openapi": "3.0.3",
