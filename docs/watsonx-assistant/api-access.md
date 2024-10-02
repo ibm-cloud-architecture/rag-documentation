@@ -22,12 +22,16 @@ This page will demonstrate how to access watsonx Assistant via an API call.
 ![test](../assets/api-access/url.png)
 
 4. Get Assistant ID from webpage within the Assistant settings
+   
   - Head to the Homepage of your assistant:
     ![test](../assets/api-access/assistant-page.png)
+    
   - Access the Assistant Settings on the bottom left corner of the page:
     ![test](../assets/api-access/assistant-settings.png)
+    
   - Select *View details* on the Assistant IDs and API details section of the page:
     ![test](../assets/api-access/view-details.png)
+    
   - Get the required information from this pop-up window:
     ![test](../assets/api-access/details.png)  
 
