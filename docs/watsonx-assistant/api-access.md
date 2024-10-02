@@ -21,13 +21,13 @@ This page will demonstrate how to access watsonx Assistant via an API call.
 ![test](../assets/api-access/url.png)
 
 4. Copy the Assistant ID and the Skill ID from the Assistant settings
-  - Head to the Homepage of your assistant:
+    - Head to the Homepage of your assistant:
       ![test](../assets/api-access/assistant-page.png)
-  - Access the Assistant Settings on the bottom left corner of the page:
+    - Access the Assistant Settings on the bottom left corner of the page:
       ![test](../assets/api-access/assistant-settings.png)
-  - Select *View details* on the Assistant IDs and API details section of the page:
+    - Select *View details* on the Assistant IDs and API details section of the page:
       ![test](../assets/api-access/view-details.png)
-  - Get the required information from this pop-up window:
+    - Get the required information from this pop-up window:
       ![test](../assets/api-access/details.png)  
 
 5. Obtain the Session ID from CLI CURL
