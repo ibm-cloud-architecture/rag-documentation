@@ -9,7 +9,7 @@ This page will demonstrate how to access watsonx Assistant via an API call.
   - [watsonx Assistant v2](https://cloud.ibm.com/apidocs/assistant-v2)
 
 
-## Steps:
+## Steps
 
 1. Access watsonx Assistant from Resource List in the IBM Cloud Account
 ![test](../assets/api-access/resource.png)
