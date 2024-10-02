@@ -11,17 +11,17 @@ This page will demonstrate how to access watsonx Assistant via an API call.
 
 ## Steps:
 
-1. Access watsonx Assistant from Resource List in the IBM Cloud Account
+- Access watsonx Assistant from Resource List in the IBM Cloud Account
 
   ![test](../assets/api-access/resource.png)
    
-2. Get API Key for watsonx Assistant from Launch webpage
+- Get API Key for watsonx Assistant from Launch webpage
   ![test](../assets/api-access/api.png)
 
-3. Get Serice Instance URL from Launch webpage
+- Get Serice Instance URL from Launch webpage
   ![test](../assets/api-access/url.png)
 
-4. Get Assistant ID from webpage within the Assistant settings
+- Copy the Assistant ID and the Skill ID from the Assistant settings
    
   - Head to the Homepage of your assistant:
       ![test](../assets/api-access/assistant-page.png)
@@ -35,20 +35,18 @@ This page will demonstrate how to access watsonx Assistant via an API call.
   - Get the required information from this pop-up window:
       ![test](../assets/api-access/details.png)  
 
-5. Copy the Skill ID from the watsonx Assistant settings
-
-6. Obtain the Session ID from CLI CURL
+- Obtain the Session ID from CLI CURL
 
   ```{}
   curl -X POST -u "apikey:{apikey}" "{url}/v2/assistants/{environment_id}/sessions?version=2021-11-27" 
   ```
-7. Get all parameters from CLI CURL
+- Get all parameters from CLI CURL
 
   ```{}
   curl -X GET -u "apikey:{apikey}" "{url}/v2/assistants/{assistant_id}/skills/{skill_id}?version=2021-11-27"
   ```
 
-8. Run Query from CLI CURL as API call to watsonx Agent
+- Run Query from CLI CURL as API call to watsonx Agent
 
   ```{}
   curl -X POST -u "apikey:{apikey}" --header "Content-Type:application/json" --data "{\"input\": {\"text\":
