@@ -1,0 +1,1490 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../watson-discovery/WatsonDiscovery/">
+      
+      
+        <link rel="next" href="../../watsonx.ai/watsonx/">
+      
+      
+      <link rel="icon" href="../../assets/watson-white-logo.jpeg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>watsonx Assistant Integrations - IBM watsonx Generative AI Assistant Walkthrough</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/index.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#watsonx-assistant-integrations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM watsonx Generative AI Assistant Walkthrough" class="md-header__button md-logo" aria-label="IBM watsonx Generative AI Assistant Walkthrough" data-md-component="logo">
+      
+  <img src="../../assets/watson-white-logo.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM watsonx Generative AI Assistant Walkthrough
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              watsonx Assistant Integrations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.ibm.com/CE-National/RAG-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../watsonx-assistant/" class="md-tabs__link">
+          
+  
+    
+  
+  watsonx Assistant
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../watson-discovery/WatsonDiscovery/" class="md-tabs__link">
+          
+  
+    
+  
+  Watson Discovery
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  Assistant Integrations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../watsonx.ai/watsonx/" class="md-tabs__link">
+          
+  
+    
+  
+  watsonx.ai
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM watsonx Generative AI Assistant Walkthrough" class="md-nav__button md-logo" aria-label="IBM watsonx Generative AI Assistant Walkthrough" data-md-component="logo">
+      
+  <img src="../../assets/watson-white-logo.jpeg" alt="logo">
+
+    </a>
+    IBM watsonx Generative AI Assistant Walkthrough
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.ibm.com/CE-National/RAG-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../watsonx-assistant/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    watsonx Assistant
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../watson-discovery/WatsonDiscovery/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Watson Discovery
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Assistant Integrations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Assistant Integrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    watsonx Assistant Integrations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    watsonx Assistant Integrations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-custom-watsonxai-extension-in-watsonx-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Custom watsonx.ai Extension in watsonx Assistant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Custom watsonx.ai Extension in watsonx Assistant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-openapi-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download OpenAPI File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-custom-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Build Custom Extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-authenticate-custom-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Authenticate Custom Extension
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Authenticate Custom Extension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve API Key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-custom-watson-discovery-extension-in-watsonx-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Custom Watson Discovery Extension in watsonx Assistant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Custom Watson Discovery Extension in watsonx Assistant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-openapi-file_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download OpenAPI File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-custom-extension_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Build Custom Extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-authenticate-custom-extension_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Authenticate Custom Extension
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Authenticate Custom Extension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-api-key-and-discovery-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve API Key and Discovery URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-discoverywatsonxai-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Discovery/watsonx.ai Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Discovery/watsonx.ai Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-actions-json-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download Actions JSON File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-actions-json-file-to-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Upload Actions JSON File to Assistant
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-set-session-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Set Session Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Set Session Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-discovery-project-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve Discovery Project ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-watsonx-project-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve watsonx Project ID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-configure-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Configure Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Configure Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invoke-watsonx-generation-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invoke watsonx generation API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-configure-llm-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional: Configure LLM Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../watsonx.ai/watsonx/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    watsonx.ai
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-custom-watsonxai-extension-in-watsonx-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Custom watsonx.ai Extension in watsonx Assistant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Custom watsonx.ai Extension in watsonx Assistant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-openapi-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download OpenAPI File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-custom-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Build Custom Extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-authenticate-custom-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Authenticate Custom Extension
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Authenticate Custom Extension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve API Key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-custom-watson-discovery-extension-in-watsonx-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Custom Watson Discovery Extension in watsonx Assistant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Custom Watson Discovery Extension in watsonx Assistant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-openapi-file_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download OpenAPI File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-custom-extension_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Build Custom Extension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-authenticate-custom-extension_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Authenticate Custom Extension
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Authenticate Custom Extension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-api-key-and-discovery-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve API Key and Discovery URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-discoverywatsonxai-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Discovery/watsonx.ai Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Discovery/watsonx.ai Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-actions-json-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download Actions JSON File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-actions-json-file-to-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Upload Actions JSON File to Assistant
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-set-session-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Set Session Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Set Session Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-discovery-project-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve Discovery Project ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-watsonx-project-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve watsonx Project ID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-configure-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Configure Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Configure Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invoke-watsonx-generation-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invoke watsonx generation API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-configure-llm-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional: Configure LLM Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="watsonx-assistant-integrations">watsonx Assistant Integrations</h1>
+<h2 id="overview">Overview</h2>
+<p>Below you can follow a step-by-step walkthrough of how to integrate watsonx Assistant with Watson Discovery and watsonx.ai. These integrations will allow you to utilize your knowledge base in Watson Discovery and use watsonx.ai LLMs to receive natural language responses.</p>
+<h2 id="create-custom-watsonxai-extension-in-watsonx-assistant">Create Custom watsonx.ai Extension in watsonx Assistant</h2>
+<h3 id="step-1-download-openapi-file"><strong>Step 1: Download OpenAPI File</strong></h3>
+<p>First, download the <code>watsonx-openapi.json</code> OpenAPI file with the button below.</p>
+<p><a class="md-button md-button--primary" href="https://raw.githubusercontent.com/watson-developer-cloud/assistant-toolkit/master/integrations/extensions/starter-kits/language-model-watsonx/watsonx-openapi.json">OpenAPI File</a></p>
+<h3 id="step-2-build-custom-extension"><strong>Step 2: Build Custom Extension</strong></h3>
+<ol>
+<li>
+<p>Navigate back to your Watsonx Assistant to the Integrations page.
+   <img alt="Go to integrations page" src="../../assets/integrations/go-to-integrations.png" /></p>
+</li>
+<li>
+<p>Scroll back down and click on the <strong>Build custom extension</strong> button.
+   <img alt="Build custom extension" src="../../assets/integrations/build-custom-extension.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> and give the extension a name and description. Click <strong>Next</strong> and then upload the OpenAPI file you downloaded from the GitHub repository.
+   <img alt="Import watsonx.ai openAPI file" src="../../assets/integrations/import-watsonx-openapi.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> and then <strong>Finish</strong>. You should now see a Watsonx.ai custom extension. Click <strong>Add</strong>.
+   <img alt="Add watsonx extension" src="../../assets/integrations/add-watsonx-extension.png" /></p>
+</li>
+</ol>
+<h3 id="step-3-authenticate-custom-extension"><strong>Step 3: Authenticate Custom Extension</strong></h3>
+<h4 id="retrieve-api-key"><strong>Retrieve API Key</strong></h4>
+<ol>
+<li>
+<p>Click <strong>Add</strong> again and <strong>Next</strong>. From the <strong>Authentication type</strong> drop-down select <strong>OAuth 2.0</strong>. To get this API key go to <a href="https://cloud.ibm.com/">IBM Cloud</a> and click on the <strong>Manage</strong> drop-down on the top navigation bar and select <strong>Access (IAM)</strong>.<br />
+<img alt="Get IBM Cloud api key" src="../../assets/integrations/get-cloud-api-key.png" /></p>
+</li>
+<li>
+<p>Click on <strong>API keys</strong> on the left and create an API key. Make sure you save the API key for future use because you will not be able to view the API key again.</p>
+</li>
+<li>
+<p>Go back to the Watsonx Assistant page and paste that API key in the text box. Click <strong>Next</strong> and <strong>Finish</strong>. Your custom Watsonx.ai extension has now been created.</p>
+</li>
+</ol>
+<h2 id="create-custom-watson-discovery-extension-in-watsonx-assistant">Create Custom Watson Discovery Extension in watsonx Assistant</h2>
+<h3 id="step-1-download-openapi-file_1"><strong>Step 1: Download OpenAPI File</strong></h3>
+<ol>
+<li>Download the <code>watson-discover-query-openapi.json</code> OpenAPI file with the button below.</li>
+</ol>
+<p><a class="md-button md-button--primary" href="https://raw.githubusercontent.com/watson-developer-cloud/assistant-toolkit/master/integrations/extensions/starter-kits/watson-discovery/watson-discovery-query-openapi.json">OpenAPI File</a></p>
+<h3 id="step-2-build-custom-extension_1"><strong>Step 2: Build Custom Extension</strong></h3>
+<ol>
+<li>
+<p>Then, navigate to the <code>Integrations</code> tab on your Watsonx Assistant page.
+   <img alt="Go to integrations page" src="../../assets/integrations/go-to-integrations.png" /></p>
+</li>
+<li>
+<p>Scroll down and click on the <strong>Build custom extension</strong> button.
+   <img alt="Build custom extension" src="../../assets/integrations/build-custom-extension.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> and then name the extension “Watson Discovery.” Click <strong>Next</strong> again and then upload the OpenAPI json file that you previously downloaded from the GitHub repository.
+   <img alt="Import Watson Discovery openAPI file" src="../../assets/integrations/import-discovery-openapi.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> and then <strong>Finish</strong>. You should now see a <code>Watson Discovery</code> tile. Click <strong>Add</strong>.
+   <img alt="Add discovery extension" src="../../assets/integrations/add-discovery-extension.png" /></p>
+</li>
+</ol>
+<h3 id="step-3-authenticate-custom-extension_1"><strong>Step 3: Authenticate Custom Extension</strong></h3>
+<ol>
+<li>
+<p>Click <strong>Add</strong> again and then <strong>Next</strong>. On the authentication page, select <strong>Basic auth</strong> for the authentication type. You will then need to input 3 pieces of information:</p>
+<ul>
+<li><em>username</em></li>
+<li><em>password</em></li>
+<li><em>discovery URL</em></li>
+</ul>
+<p><img alt="Add discovery authentication credentials" src="../../assets/integrations/discovery-authentication.png" /></p>
+</li>
+<li>
+<p>Under username you can input <code>apikey</code></p>
+</li>
+</ol>
+<h4 id="retrieve-api-key-and-discovery-url"><strong>Retrieve API Key and Discovery URL</strong></h4>
+<ol>
+<li>
+<p>For the <code>password</code> and <code>discovery URL</code>, you will need to navigate to your <code>Watson Discovery</code> instance. Go to your <a href="https://cloud.ibm.com/">IBM Cloud</a> account, click on the hamburger menu in the top left, and click on <strong>Resource List</strong>.</p>
+<p><img alt="Go to resource list" src="../../assets/integrations/go-to-resource-list.png" /></p>
+</li>
+<li>
+<p>Open up the AI/Machine Learning section and click on your discovery instance and you should see this page.</p>
+<p><img alt="Get discovery credentials" src="../../assets/integrations/discovery-credentials.png" /></p>
+</li>
+<li>
+<p>Copy both the <em>API key</em> and <em>URL</em> and paste it on the extensions page of your watsonx Assistant instance. Paste the API key into the password text box and paste the URL in the discovery URL text box at the bottom of the page</p>
+</li>
+<li>
+<p><em>Make sure that when you paste the URL into the discovery URL text box that you take out the ”https://” part of the URL</em>.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>, <strong>Finish</strong>, and <strong>Close</strong>. Our last step to complete the watsonx Assistant integration with watsonx.ai and Watson Discovery will require us to create and configure some actions.</p>
+</li>
+</ol>
+<h2 id="configure-discoverywatsonxai-actions">Configure Discovery/watsonx.ai Actions</h2>
+<h3 id="step-1-download-actions-json-file"><strong>Step 1: Download Actions JSON File</strong></h3>
+<ol>
+<li>Download the <code>discovery-watsonx-actions.json</code> file from the button below.</li>
+</ol>
+<p><a class="md-button md-button--primary" href="https://github.com/watson-developer-cloud/assistant-toolkit/tree/master/integrations/extensions/starter-kits/language-model-conversational-search">Actions JSON file</a></p>
+<h3 id="step-2-upload-actions-json-file-to-assistant"><strong>Step 2: Upload Actions JSON File to Assistant</strong></h3>
+<ol>
+<li>
+<p>Go back to the watsonx Assistant page and navigate to the Actions tab from the menu on the left.</p>
+<p><img alt="Go to actions" src="../../assets/integrations/go-to-actions.png" /></p>
+</li>
+<li>
+<p>Click on the Settings icon in the top right corner.</p>
+<p><img alt="Go to settings on actions page" src="../../assets/integrations/go-to-action-settings.png" /></p>
+</li>
+<li>
+<p>Navigate to the <strong>Upload/Download</strong> tab and click on the box under <em>Upload</em> to upload the file you just downloaded from GitHub. Then, click the blue <strong>Upload</strong> button and the <strong>Upload and replace</strong> button. Finally, click <strong>Close</strong> in the top right.</p>
+<p><img alt="Upload actions json" src="../../assets/integrations/upload-actions-json.png" /></p>
+</li>
+<li>
+<p>You should now see 3 actions created for you from the json file you just uploaded: <em>Generate Answer</em>, <em>Invoke watsonx generation API</em>, and <em>Search</em>.</p>
+<p><img alt="Actions created from json file" src="../../assets/integrations/actions-created-by-json.png" /></p>
+</li>
+</ol>
+<p>You'll see a red status symbol for both the <strong>Invoke watsonx generation API</strong> and <strong>Search</strong> actions. We'll need to go into each action and fix the errors. Before we do that, let's go set some values for some of the variables created.</p>
+<h3 id="step-3-set-session-variables"><strong>Step 3: Set Session Variables</strong></h3>
+<ol>
+<li>On the left hand side under <strong>Variables</strong> click on <strong>Created by you</strong>.</li>
+</ol>
+<p><img alt="Go to variables created by you" src="../../assets/integrations/go-to-variables.png" /></p>
+<p>There's 2 variables that we want to change: <em>discovery_project_id</em> and <em>watsonx_project_id</em>.</p>
+<h4 id="retrieve-discovery-project-id"><strong>Retrieve Discovery Project ID</strong></h4>
+<ol>
+<li>
+<p>Let's click on <strong>discovery_project_id</strong>. To get the project ID, navigate to your Watson Discovery instance. Select your project that includes the documents/information needed and navigate to the <strong>Integrate and Deploy</strong> page from the menu on the left.</p>
+<p><img alt="Go to integrate and deploy page in discovery instance" src="../../assets/integrations/discovery-integrate-and-deploy.png" /></p>
+</li>
+<li>
+<p>Go to the <strong>API information</strong> tab and copy the <strong>Project ID</strong>.</p>
+<p><img alt="Copy discovery project id" src="../../assets/integrations/discovery-project-id.png" /></p>
+</li>
+<li>
+<p>Now, go back to your watsonx Assistant instance and paste the project ID in the <strong>Initial value</strong> text box. Click <strong>Save</strong>.</p>
+<p><img alt="Set discovery project id variable" src="../../assets/integrations/set-discovery-project-id.png" /></p>
+</li>
+</ol>
+<h4 id="retrieve-watsonx-project-id"><strong>Retrieve watsonx Project ID</strong></h4>
+<ol>
+<li>
+<p>Now, let's click on <strong>watsonx_project_id</strong>. To get this, navigate to your watsonx instance and select the project you created. Under the <strong>Manage</strong> tab you should be able to find the <strong>project ID</strong>. Copy that and go back to the watsonx Assistant page.</p>
+<p><img alt="Get watsonx.ai project id" src="../../assets/integrations/get-watsonx-project-id.png" /></p>
+</li>
+<li>
+<p>Paste this value into the <strong>Initial value</strong> box similar to what you did for the discovery project ID. Click <strong>Save</strong>.</p>
+<p><img alt="Set watsonx.ai project id" src="../../assets/integrations/set-watsonx-project-id.png" /></p>
+</li>
+</ol>
+<p>Now that we've set these variables, let's go back to our actions.</p>
+<h3 id="step-4-configure-actions"><strong>Step 4: Configure Actions</strong></h3>
+<ol>
+<li>This can be found if you click <strong>Created by you</strong> under <strong>All items</strong>.</li>
+</ol>
+<h4 id="search"><strong><em>Search</em></strong></h4>
+<ol>
+<li>
+<p>Let's step into the <strong>Search</strong> action first. Click on <strong>Search</strong>.</p>
+</li>
+<li>
+<p>You'll see that step 5 on the left hand side is red. Click on that step. you should see a message that <em>Extension not fully configured</em>.</p>
+<p><img alt="Edit search action extension" src="../../assets/integrations/config-search-action.png" /></p>
+</li>
+<li>
+<p>Let's click on <strong>Edit extension</strong> under that message.</p>
+</li>
+<li>
+<p>For the extension, we're going to use our Watson Discovery extension. And we're going to use the <strong>Query a project</strong> operation.</p>
+</li>
+<li>
+<p>We should see 2 parameters for this operation: <em>version</em> and <em>project_id</em>. We're going to set <strong>version</strong> to <strong>discovery_date_version</strong> and set <strong>project_id</strong> to <strong>discovery_project_id</strong>. To reach these values to set the parameters to, click on the drop down box to the right of <em>To</em> and click on <strong>Session variables</strong>. You should be able to find both <em>discovery_date_version</em> and <em>discovery_project_id</em>. Once those 2 parameters have been set, click <strong>Apply</strong>.</p>
+<p><img alt="Configure discovery extension in search action" src="../../assets/integrations/config-discovery-extension.png" /></p>
+</li>
+<li>
+<p>Make sure to save by clicking the save icon in the top right. Then, exit by clicking the X in the top right as well.</p>
+</li>
+</ol>
+<h4 id="invoke-watsonx-generation-api"><strong><em>Invoke watsonx generation API</em></strong></h4>
+<ol>
+<li>
+<p>Now, let's go into the <strong>Invoke watsonx generation API</strong> action.</p>
+</li>
+<li>
+<p>You'll see that step 1 is red. Go ahead and click on that. You'll see that there's the same error messages as the other action.</p>
+<p><img alt="Edit watsonx generation action" src="../../assets/integrations/config-generation-action.png" /></p>
+</li>
+<li>
+<p>Click on <strong>Edit extension</strong>.</p>
+</li>
+<li>
+<p>This time for the extension, we're going to use our watsonx.ai extension. And then we're going to use the <strong>Generation</strong> operation.</p>
+</li>
+<li>
+<p>You should see 4 parameters that we need to set. Set <strong>version</strong> to <strong>watsonx_api_version</strong>, <strong>input</strong> to <strong>model_input</strong>, <strong>model_id</strong> to <strong>model_id</strong>, and <strong>project_id</strong> to <strong>watonsx_project_id</strong>. All of these values can be found under <em>session variables</em> similar to before. Finally, click <strong>Apply</strong>.</p>
+<p><img alt="Configure watsonx extension in generation action" src="../../assets/integrations/config-watsonx-extension.png" /></p>
+</li>
+<li>
+<p>Make sure to save by clicking the save icon in the top right. Then, exit by clicking the X in the top right as well.</p>
+</li>
+</ol>
+<h3 id="optional-configure-llm-model"><strong>Optional: Configure LLM Model</strong></h3>
+<p>If you wanted to play around with/test different models with watsonx.ai, all you need to do is go back to the variables <strong>Created by you</strong> page. The variable <strong>model_id</strong> is the one that denotes which model to use. So, if you edit that to include the provider and model version (ex. IBM and granite-13b-chat-v2) you will be able to use that model.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 2, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../watson-discovery/WatsonDiscovery/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Watson Discovery Essentials">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Watson Discovery Essentials
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../watsonx.ai/watsonx/" class="md-footer__link md-footer__link--next" aria-label="Next: watsonx AI Essentials (Getting started with Generative AI)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                watsonx AI Essentials (Getting started with Generative AI)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.tabs.link", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>
