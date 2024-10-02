@@ -171,7 +171,7 @@ Paste the Generated URL in the subject of the properties panel for the document 
 
 ![](../assets/cos_url/14.png)
 
-Once this step is complete you can upload this document to your knowledgebase. For instructions on that please refer to the **[Watson Discovery](./watson-discovery/WatsonDiscovery.md)** section of this documentation.
+Once this step is complete you can upload this document to your knowledgebase. For instructions on that please refer to the **[Watson Discovery](../watson-discovery/WatsonDiscovery.md)** section of this documentation.
 
 ## Utilizing URL Walkthrough
 
