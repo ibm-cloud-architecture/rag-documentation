@@ -12,15 +12,27 @@ This page will demonstrate how to access watsonx Assistant via an API call.
 ## Steps:
 
 1. Access watsonx Assistant from Resource List in the IBM Cloud Account
+
+![test](../assets/api-access/resource.png)
    
-2. Get API Key for watsonx Assistant from Launch webpage\
-   
+2. Get API Key for watsonx Assistant from Launch webpage
+![test](../assets/api-access/api.png)
+
 3. Get Serice Instance URL from Launch webpage
-   
+![test](../assets/api-access/url.png)
+
 4. Get Assistant ID from webpage within the Assistant settings
-   
+  - Head to the Homepage of your assistant:
+    ![test](../assets/api-access/assistant-page.png)
+  - Access the Assistant Settings on the bottom left corner of the page:
+    ![test](../assets/api-access/assistant-settings.png)
+  - Select *View details* on the Assistant IDs and API details section of the page:
+    ![test](../assets/api-access/view-details.png)
+  - Get the required information from this pop-up window:
+    ![test](../assets/api-access/details.png)  
+
 5. Copy the Skill ID from the watsonx Assistant settings
-   
+
 6. Obtain the Session ID from CLI CURL
 
 ```{}
