@@ -44,8 +44,11 @@ Analytics monitor and analyze how users interact with the chatbot, providing ins
 
 - [IBM watsonx Assistant Documentation](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-welcome-new-assistant)
 
+- [Accessing watsonx Assistant via API call](./api-access)
+  
 - Intermediate Skill: [Video URL in RAG Scenario](./video-url)
-
+  
+- Intermediate Skill: [Connecting to Database](./connect-database)
 
 ## Assistant Walkthrough
 
